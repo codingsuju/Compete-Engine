@@ -1,0 +1,8 @@
+#!/bin/bash
+dest="$(dirname "$0")"
+codedestination=$dest/../Submit
+sub_java > $codedestination/Code.java
+rm $codedestination/App.java
+cp $codedestination/Code.java $codedestination/App.java
+rm $codedestination/Code.java
+cat $codedestination/App.java

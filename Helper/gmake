@@ -1,0 +1,7 @@
+#!/bin/bash
+make
+printf "Give your standard input if you have any!! Have fun hehe !!\n"
+run_cpp
+
+
+

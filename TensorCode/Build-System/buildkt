@@ -1,0 +1,6 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+cd ..
+kotlinc code.kt -include-runtime -d code.jar
+java -jar code.jar
+rm code.jar

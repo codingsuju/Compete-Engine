@@ -1,0 +1,6 @@
+#!/bin/bash
+dest="$(dirname "$0")"
+codedestination=$dest/../Submit
+cat ./app/src/main/kotlin/com/algospace/App.kt > $codedestination/App.kt
+cd $codedestination
+sed 1,1d App.kt

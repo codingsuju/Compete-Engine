@@ -1,0 +1,7 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+cd ..
+g++ code.cpp -o code
+./code
+rm code
+printf "\n"

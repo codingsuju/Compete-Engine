@@ -1,0 +1,20 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+cd ./../Gradle-Kotlin-CP/Contest
+mkdir $1
+cd $1
+l=65
+m=$2
+n=$((($l + $m)-1))
+for i in `seq $l $n`
+do
+  problem_directory=$(printf \\$(printf "%o" $i))
+  mkdir $problem_directory
+  cd $problem_directory
+  gradle init --dsl groovy --package com.algospace --project-name Code --type kotlin-application --incubating
+  rm ./app/src/main/kotlin/com/algospace/App.kt
+  cat ./../../../Config-Files/Build-Script/run.txt >> ./app/build.gradle
+  cat ./../../../Config-Files/Templates/base.kt >> ./app/src/main/kotlin/com/algospace/App.kt
+  gradle build
+  cd ..
+done

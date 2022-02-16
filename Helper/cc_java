@@ -1,0 +1,20 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+cd ./../Gradle-Java-CP/Contest
+mkdir $1
+cd $1
+l=65
+m=$2
+n=$((($l + $m)-1))
+for i in `seq $l $n`
+do
+  problem_directory=$(printf \\$(printf "%o" $i))
+  mkdir $problem_directory
+  cd $problem_directory
+  gradle init --dsl groovy --package com.algospace --project-name Code --test-framework junit --type java-application --incubating
+  rm ./app/src/main/java/com/algospace/App.java
+  cat ./../../../Config-Files/Build-Script/run.txt >> ./app/build.gradle
+  cat ./../../../Config-Files/Templates/base.java >> ./app/src/main/java/com/algospace/App.java
+  gradle build
+  cd ..
+done

@@ -1,0 +1,2 @@
+#!/bin/bash
+nvim ./app/src/main/java/com/algospace/App.java

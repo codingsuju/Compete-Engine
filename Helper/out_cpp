@@ -1,0 +1,7 @@
+#!/bin/bash
+dest="$(dirname "$0")"
+codedestination=$dest/../Submit
+cat ./../code.cpp > $codedestination/code.cpp
+cat $codedestination/code.cpp
+
+

@@ -1,0 +1,23 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+cd ./../Ninja-Build-CP/Contest
+mkdir $1
+cd $1
+l=65
+m=$2
+n=$((($l + $m)-1))
+for i in `seq $l $n`
+do
+  problem_directory=$(printf \\$(printf "%o" $i))
+  mkdir $problem_directory
+  cd $problem_directory
+  cp ./../../../files/CMakeLists.txt CMakeLists.txt
+  cp ./../../../files/code.cpp code.cpp
+  mkdir bits
+  cp ./../../../files/stdc++.h bits/stdc++.h
+  mkdir build
+  cd build
+  cmake -G "Unix Makefiles" -S .. -B .
+  make
+  cd ../..
+done
