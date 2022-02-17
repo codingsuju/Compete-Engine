@@ -5,6 +5,7 @@ mkdir $1
 cd $1
 gradle init --dsl groovy --package com.algospace --project-name Code --type kotlin-application --incubating
 rm ./app/src/main/kotlin/com/algospace/App.kt
+cat ./../../Config-Files/Build-Script/jvmTargetSet.txt >> ./app/build.gradle
 cat ./../../Config-Files/Build-Script/run.txt >> ./app/build.gradle
 cat ./../../Config-Files/Templates/base.kt >> ./app/src/main/kotlin/com/algospace/App.kt
 gradle build
