@@ -5,4 +5,7 @@ sub_kt > $codedestination/Code.kt
 rm $codedestination/App.kt
 cp $codedestination/Code.kt $codedestination/App.kt
 rm $codedestination/Code.kt
+Kotlin_DS_Processor > $codedestination/Code.kt
+cat $codedestination/Code.kt >> $codedestination/App.kt
+rm $codedestination/Code.kt
 cat $codedestination/App.kt
