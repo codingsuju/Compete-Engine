@@ -8,4 +8,5 @@ rm ./app/src/main/kotlin/com/algospace/App.kt
 cat ./../../Config-Files/Build-Script/jvmTargetSet.txt >> ./app/build.gradle
 cat ./../../Config-Files/Build-Script/run.txt >> ./app/build.gradle
 cat ./../../Config-Files/Templates/base.kt >> ./app/src/main/kotlin/com/algospace/App.kt
+cp -r './../../Config-Files/data_structures' './app/src/main/kotlin/com/algospace'
 gradle build

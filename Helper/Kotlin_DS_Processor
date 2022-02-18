@@ -1,0 +1,16 @@
+#!/bin/bash
+dest="$(dirname "$0")"
+codedestination=$dest/../Submit
+cp -r './app/src/main/kotlin/com/algospace/data_structures' $codedestination/
+cd $codedestination/data_structures
+sed '1,3d' TensorSet_DS.kt
+sed '1,3d' TensorMap_DS.kt
+sed '1,3d' TensorTreeSet_DS.kt
+sed '1,3d' TensorTreeMap_DS.kt
+sed '1,3d' TensorStack_DS.kt
+sed '1,2d' TensorQueue_DS.kt
+sed '1,2d' TensorDeque_DS.kt
+sed '1,4d' Tensor_DS.kt
+sed '1,4d' Tensor_functions.kt
+cd ..
+rm -rf data_structures
