@@ -8,4 +8,9 @@ class TensorTreeSet<T:Comparable<T>>:TreeSet<T>{
     constructor(m:SortedSet<T>):super(m)
     fun insert(e:T){super.add(e)}
     fun find(e:T):Boolean{return super.contains(e)}
+    override fun clone():TensorTreeSet<T>{
+        var newTensorTreeSet:TensorTreeSet<T> =TensorTreeSet()
+        for(k in this){newTensorTreeSet.add(k)}
+        return newTensorTreeSet
+    }
 }

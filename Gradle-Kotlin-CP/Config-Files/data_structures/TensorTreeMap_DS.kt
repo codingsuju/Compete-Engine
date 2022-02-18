@@ -7,4 +7,9 @@ class TensorTreeMap<K:Comparable<K>,V>:TreeMap<K,V>{
     constructor(m:MutableMap<out K,out V>):super(m)
     constructor(m:SortedMap<K,out V>):super(m)
     override operator fun get(key:K):V{return super.get(key)!!}
+    override fun clone():TensorTreeMap<K,V>{
+        var newTensorTreeMap:TensorTreeMap<K,V> =TensorTreeMap()
+        for((k,v) in this){newTensorTreeMap[k]=v}
+        return newTensorTreeMap
+    }
 }

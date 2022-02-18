@@ -8,4 +8,10 @@ class TensorMap<K,V>(var n:Int,var defaultValue:V?) :HashMap<K,V>(n){
         if(this.contains(key)==false) return defaultValue!!
         return super.get(key)!!
     }
+    override fun clone():TensorMap<K,V>{
+        var m=this.size
+        var newTensorMap:TensorMap<K,V> =TensorMap(m)
+        for((k,v) in this){newTensorMap[k]=v}
+        return newTensorMap
+    }
 } 
