@@ -11,7 +11,7 @@ class Tensor<T:Comparable<T>>(var n:Int,var defaultValue:T?,var preInitialize:Bo
     fun back():T{return super.get(super.size-1)!!}
     override fun clone():Tensor<T>{
         var m:Int=super.size
-        var newTensor:Tensor<T> =Tensor(n,defaultValue)
+        var newTensor:Tensor<T> =Tensor(m,defaultValue)
         for(i in 0..(m-1))newTensor[i]=this[i]
         return newTensor
     }
