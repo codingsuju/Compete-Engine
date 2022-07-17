@@ -1,5 +1,5 @@
 package com.algospace
-import com.algospace.data_structures
+import com.algospace.data_structures.*
 import java.util.*
 import kotlin.math.*
 private fun readLn()=readLine()!!
